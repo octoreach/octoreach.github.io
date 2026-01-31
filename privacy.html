@@ -17,6 +17,9 @@
         .legal-content p { color: var(--text-secondary); margin-bottom: 16px; }
         .legal-content ul { color: var(--text-secondary); margin-left: 24px; margin-bottom: 16px; }
         .legal-content li { margin-bottom: 8px; }
+        .lang-switcher { display: flex; gap: 12px; margin-bottom: 24px; }
+        .lang-btn { padding: 8px 16px; border-radius: 8px; background: var(--surface-light); color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: all 0.3s; }
+        .lang-btn:hover, .lang-btn.active { background: var(--primary); color: white; }
     </style>
 </head>
 <body>
@@ -32,49 +35,152 @@
     <section class="legal-page">
         <div class="container">
             <div class="legal-content">
-                <h1>Privacy Policy</h1>
-                <p class="update-date">Last Updated: January 31, 2026</p>
+                <div class="lang-switcher">
+                    <a href="?lang=en" class="lang-btn" data-lang="en">English</a>
+                    <a href="?lang=zh" class="lang-btn" data-lang="zh">简体中文</a>
+                    <a href="?lang=zh-TW" class="lang-btn" data-lang="zh-TW">繁體中文</a>
+                </div>
 
-                <h2>1. Introduction</h2>
-                <p>One Ritual ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you use our app and tell you about your privacy rights.</p>
+                <!-- English Content -->
+                <div id="content-en" class="content-block">
+                    <h1>Privacy Policy</h1>
+                    <p class="update-date">Last Updated: January 31, 2026</p>
 
-                <h2>2. Data We Collect</h2>
-                <p>One Ritual stores all habit data locally on your device. We do not collect or store your personal habit data on our servers. The types of data stored locally include:</p>
-                <ul>
-                    <li>Habit names and configurations</li>
-                    <li>Completion records and streaks</li>
-                    <li>Mood logs and notes</li>
-                    <li>App preferences and settings</li>
-                </ul>
+                    <h2>1. Introduction</h2>
+                    <p>One Ritual ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you use our app and tell you about your privacy rights.</p>
 
-                <h2>3. Analytics</h2>
-                <p>We use Firebase Analytics to collect anonymous usage data to help us improve the app. This data does not include any personally identifiable information. It helps us understand:</p>
-                <ul>
-                    <li>Which features are most used</li>
-                    <li>App performance and crash reports</li>
-                    <li>General usage patterns</li>
-                </ul>
+                    <h2>2. Data We Collect</h2>
+                    <p>One Ritual stores all habit data locally on your device. We do not collect or store your personal habit data on our servers. The types of data stored locally include:</p>
+                    <ul>
+                        <li>Habit names and configurations</li>
+                        <li>Completion records and streaks</li>
+                        <li>Mood logs and notes</li>
+                        <li>App preferences and settings</li>
+                    </ul>
 
-                <h2>4. Your Rights</h2>
-                <p>Since data is stored locally, you have full control over your data. You can:</p>
-                <ul>
-                    <li>Delete your data at any time by uninstalling the app</li>
-                    <li>Clear app data through your device settings</li>
-                    <li>Export your data (coming soon)</li>
-                </ul>
+                    <h2>3. Analytics</h2>
+                    <p>We use Firebase Analytics to collect anonymous usage data to help us improve the app. This data does not include any personally identifiable information. It helps us understand:</p>
+                    <ul>
+                        <li>Which features are most used</li>
+                        <li>App performance and crash reports</li>
+                        <li>General usage patterns</li>
+                    </ul>
 
-                <h2>5. Data Security</h2>
-                <p>Your data is stored securely on your device using standard iOS/Android security practices. We do not transmit your personal habit data over the internet.</p>
+                    <h2>4. Your Rights</h2>
+                    <p>Since data is stored locally, you have full control over your data. You can:</p>
+                    <ul>
+                        <li>Delete your data at any time by uninstalling the app</li>
+                        <li>Clear app data through your device settings</li>
+                        <li>Export your data (coming soon)</li>
+                    </ul>
 
-                <h2>6. Children's Privacy</h2>
-                <p>Our app is not intended for children under 13 years of age. We do not knowingly collect data from children under 13.</p>
+                    <h2>5. Data Security</h2>
+                    <p>Your data is stored securely on your device using standard iOS/Android security practices. We do not transmit your personal habit data over the internet.</p>
 
-                <h2>7. Changes to This Policy</h2>
-                <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date.</p>
+                    <h2>6. Children's Privacy</h2>
+                    <p>Our app is not intended for children under 13 years of age. We do not knowingly collect data from children under 13.</p>
 
-                <h2>8. Contact Us</h2>
-                <p>If you have any questions about this privacy policy, please contact us at:</p>
-                <p>Email: <a href="mailto:octoreach2026@gmail.com" style="color: var(--primary);">octoreach2026@gmail.com</a></p>
+                    <h2>7. Changes to This Policy</h2>
+                    <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date.</p>
+
+                    <h2>8. Contact Us</h2>
+                    <p>If you have any questions about this privacy policy, please contact us at:</p>
+                    <p>Email: <a href="mailto:octoreach2026@gmail.com" style="color: var(--primary);">octoreach2026@gmail.com</a></p>
+                </div>
+
+                <!-- Simplified Chinese Content -->
+                <div id="content-zh" class="content-block" style="display: none;">
+                    <h1>隐私政策</h1>
+                    <p class="update-date">最后更新：2026年1月31日</p>
+
+                    <h2>1. 引言</h2>
+                    <p>壹习惯（"我们"）尊重您的隐私，并致力于保护您的个人数据。本隐私政策将告知您我们如何在您使用我们的应用时处理您的个人数据，并告知您的隐私权利。</p>
+
+                    <h2>2. 我们收集的数据</h2>
+                    <p>壹习惯将所有习惯数据存储在您的设备本地。我们不会在服务器上收集或存储您的个人习惯数据。本地存储的数据类型包括：</p>
+                    <ul>
+                        <li>习惯名称和配置</li>
+                        <li>完成记录和连续天数</li>
+                        <li>心情日志和笔记</li>
+                        <li>应用偏好设置</li>
+                    </ul>
+
+                    <h2>3. 数据分析</h2>
+                    <p>我们使用 Firebase Analytics 收集匿名使用数据，以帮助我们改进应用。这些数据不包含任何个人身份信息。它帮助我们了解：</p>
+                    <ul>
+                        <li>哪些功能使用最多</li>
+                        <li>应用性能和崩溃报告</li>
+                        <li>一般使用模式</li>
+                    </ul>
+
+                    <h2>4. 您的权利</h2>
+                    <p>由于数据存储在本地，您对数据拥有完全控制权。您可以：</p>
+                    <ul>
+                        <li>随时通过卸载应用删除您的数据</li>
+                        <li>通过设备设置清除应用数据</li>
+                        <li>导出您的数据（即将推出）</li>
+                    </ul>
+
+                    <h2>5. 数据安全</h2>
+                    <p>您的数据使用标准的 iOS/Android 安全措施安全地存储在您的设备上。我们不会通过互联网传输您的个人习惯数据。</p>
+
+                    <h2>6. 儿童隐私</h2>
+                    <p>我们的应用不面向13岁以下的儿童。我们不会故意收集13岁以下儿童的数据。</p>
+
+                    <h2>7. 政策变更</h2>
+                    <p>我们可能会不时更新本隐私政策。我们将通过在此页面发布新政策并更新"最后更新"日期来通知您任何更改。</p>
+
+                    <h2>8. 联系我们</h2>
+                    <p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：</p>
+                    <p>邮箱：<a href="mailto:octoreach2026@gmail.com" style="color: var(--primary);">octoreach2026@gmail.com</a></p>
+                </div>
+
+                <!-- Traditional Chinese Content -->
+                <div id="content-zh-TW" class="content-block" style="display: none;">
+                    <h1>隱私政策</h1>
+                    <p class="update-date">最後更新：2026年1月31日</p>
+
+                    <h2>1. 引言</h2>
+                    <p>壹習慣（「我們」）尊重您的隱私，並致力於保護您的個人資料。本隱私政策將告知您我們如何在您使用我們的應用程式時處理您的個人資料，並告知您的隱私權利。</p>
+
+                    <h2>2. 我們收集的資料</h2>
+                    <p>壹習慣將所有習慣資料儲存在您的裝置本地。我們不會在伺服器上收集或儲存您的個人習慣資料。本地儲存的資料類型包括：</p>
+                    <ul>
+                        <li>習慣名稱和設定</li>
+                        <li>完成記錄和連續天數</li>
+                        <li>心情日誌和筆記</li>
+                        <li>應用程式偏好設定</li>
+                    </ul>
+
+                    <h2>3. 資料分析</h2>
+                    <p>我們使用 Firebase Analytics 收集匿名使用資料，以幫助我們改進應用程式。這些資料不包含任何個人身份資訊。它幫助我們了解：</p>
+                    <ul>
+                        <li>哪些功能使用最多</li>
+                        <li>應用程式效能和當機報告</li>
+                        <li>一般使用模式</li>
+                    </ul>
+
+                    <h2>4. 您的權利</h2>
+                    <p>由於資料儲存在本地，您對資料擁有完全控制權。您可以：</p>
+                    <ul>
+                        <li>隨時透過解除安裝應用程式刪除您的資料</li>
+                        <li>透過裝置設定清除應用程式資料</li>
+                        <li>匯出您的資料（即將推出）</li>
+                    </ul>
+
+                    <h2>5. 資料安全</h2>
+                    <p>您的資料使用標準的 iOS/Android 安全措施安全地儲存在您的裝置上。我們不會透過網路傳輸您的個人習慣資料。</p>
+
+                    <h2>6. 兒童隱私</h2>
+                    <p>我們的應用程式不面向13歲以下的兒童。我們不會故意收集13歲以下兒童的資料。</p>
+
+                    <h2>7. 政策變更</h2>
+                    <p>我們可能會不時更新本隱私政策。我們將透過在此頁面發布新政策並更新「最後更新」日期來通知您任何變更。</p>
+
+                    <h2>8. 聯繫我們</h2>
+                    <p>如果您對本隱私政策有任何疑問，請透過以下方式聯繫我們：</p>
+                    <p>電子郵件：<a href="mailto:octoreach2026@gmail.com" style="color: var(--primary);">octoreach2026@gmail.com</a></p>
+                </div>
             </div>
         </div>
     </section>
@@ -86,5 +192,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Get language from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang') || 'en';
+        
+        // Hide all content blocks
+        document.querySelectorAll('.content-block').forEach(block => {
+            block.style.display = 'none';
+        });
+        
+        // Show selected language content
+        const contentBlock = document.getElementById('content-' + lang);
+        if (contentBlock) {
+            contentBlock.style.display = 'block';
+        } else {
+            document.getElementById('content-en').style.display = 'block';
+        }
+        
+        // Highlight active language button
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            if (btn.dataset.lang === lang) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Update page title based on language
+        const titles = {
+            'en': 'Privacy Policy - One Ritual',
+            'zh': '隐私政策 - 壹习惯',
+            'zh-TW': '隱私政策 - 壹習慣'
+        };
+        document.title = titles[lang] || titles['en'];
+    </script>
 </body>
 </html>

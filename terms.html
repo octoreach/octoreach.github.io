@@ -17,6 +17,9 @@
         .legal-content p { color: var(--text-secondary); margin-bottom: 16px; }
         .legal-content ul { color: var(--text-secondary); margin-left: 24px; margin-bottom: 16px; }
         .legal-content li { margin-bottom: 8px; }
+        .lang-switcher { display: flex; gap: 12px; margin-bottom: 24px; }
+        .lang-btn { padding: 8px 16px; border-radius: 8px; background: var(--surface-light); color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: all 0.3s; }
+        .lang-btn:hover, .lang-btn.active { background: var(--primary); color: white; }
     </style>
 </head>
 <body>
@@ -32,53 +35,164 @@
     <section class="legal-page">
         <div class="container">
             <div class="legal-content">
-                <h1>Terms of Use</h1>
-                <p class="update-date">Last Updated: January 31, 2026</p>
+                <div class="lang-switcher">
+                    <a href="?lang=en" class="lang-btn" data-lang="en">English</a>
+                    <a href="?lang=zh" class="lang-btn" data-lang="zh">简体中文</a>
+                    <a href="?lang=zh-TW" class="lang-btn" data-lang="zh-TW">繁體中文</a>
+                </div>
 
-                <h2>1. Acceptance of Terms</h2>
-                <p>By downloading, installing, or using One Ritual ("the App"), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the App.</p>
+                <!-- English Content -->
+                <div id="content-en" class="content-block">
+                    <h1>Terms of Use</h1>
+                    <p class="update-date">Last Updated: January 31, 2026</p>
 
-                <h2>2. Use of the App</h2>
-                <p>One Ritual is a habit tracking application designed to help you build better habits. You agree to use the App only for lawful purposes and in accordance with these Terms. You may not:</p>
-                <ul>
-                    <li>Use the App in any way that violates applicable laws or regulations</li>
-                    <li>Attempt to reverse engineer or decompile the App</li>
-                    <li>Use the App to transmit harmful or malicious content</li>
-                </ul>
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By downloading, installing, or using One Ritual ("the App"), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the App.</p>
 
-                <h2>3. Subscriptions and Payments</h2>
-                <p>One Ritual offers optional premium subscriptions:</p>
-                <ul>
-                    <li><strong>Monthly Subscription:</strong> Billed monthly, auto-renews until cancelled</li>
-                    <li><strong>Yearly Subscription:</strong> Billed annually, auto-renews until cancelled</li>
-                    <li><strong>Lifetime Access:</strong> One-time payment for permanent access</li>
-                </ul>
-                <p>Payment will be charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</p>
+                    <h2>2. Use of the App</h2>
+                    <p>One Ritual is a habit tracking application designed to help you build better habits. You agree to use the App only for lawful purposes and in accordance with these Terms. You may not:</p>
+                    <ul>
+                        <li>Use the App in any way that violates applicable laws or regulations</li>
+                        <li>Attempt to reverse engineer or decompile the App</li>
+                        <li>Use the App to transmit harmful or malicious content</li>
+                    </ul>
 
-                <h2>4. Free Trial</h2>
-                <p>We may offer a free trial period for premium features. If you do not cancel before the trial ends, you will be automatically charged for the subscription.</p>
+                    <h2>3. Subscriptions and Payments</h2>
+                    <p>One Ritual offers optional premium subscriptions:</p>
+                    <ul>
+                        <li><strong>Monthly Subscription:</strong> Billed monthly, auto-renews until cancelled</li>
+                        <li><strong>Yearly Subscription:</strong> Billed annually, auto-renews until cancelled</li>
+                        <li><strong>Lifetime Access:</strong> One-time payment for permanent access</li>
+                    </ul>
+                    <p>Payment will be charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period.</p>
 
-                <h2>5. Cancellation</h2>
-                <p>You can cancel your subscription at any time through your Apple ID account settings. Cancellation will take effect at the end of the current billing period.</p>
+                    <h2>4. Free Trial</h2>
+                    <p>We may offer a free trial period for premium features. If you do not cancel before the trial ends, you will be automatically charged for the subscription.</p>
 
-                <h2>6. User Data</h2>
-                <p>Your habit data is stored locally on your device. We value your privacy and do not sell your personal data. Please refer to our Privacy Policy for more details.</p>
+                    <h2>5. Cancellation</h2>
+                    <p>You can cancel your subscription at any time through your Apple ID account settings. Cancellation will take effect at the end of the current billing period.</p>
 
-                <h2>7. Intellectual Property</h2>
-                <p>The App and its original content, features, and functionality are owned by One Ritual and are protected by international copyright, trademark, and other intellectual property laws.</p>
+                    <h2>6. User Data</h2>
+                    <p>Your habit data is stored locally on your device. We value your privacy and do not sell your personal data. Please refer to our Privacy Policy for more details.</p>
 
-                <h2>8. Disclaimer</h2>
-                <p>The App is provided "as is" without warranties of any kind, either express or implied. We do not guarantee that the App will be error-free or uninterrupted. We are not responsible for any damages arising from your use of the App.</p>
+                    <h2>7. Intellectual Property</h2>
+                    <p>The App and its original content, features, and functionality are owned by One Ritual and are protected by international copyright, trademark, and other intellectual property laws.</p>
 
-                <h2>9. Limitation of Liability</h2>
-                <p>In no event shall One Ritual be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the App.</p>
+                    <h2>8. Disclaimer</h2>
+                    <p>The App is provided "as is" without warranties of any kind, either express or implied. We do not guarantee that the App will be error-free or uninterrupted. We are not responsible for any damages arising from your use of the App.</p>
 
-                <h2>10. Changes to Terms</h2>
-                <p>We reserve the right to modify these Terms at any time. We will notify users of any material changes by updating the "Last Updated" date. Continued use of the App after changes constitutes acceptance of the new Terms.</p>
+                    <h2>9. Limitation of Liability</h2>
+                    <p>In no event shall One Ritual be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the App.</p>
 
-                <h2>11. Contact Us</h2>
-                <p>If you have any questions about these Terms, please contact us at:</p>
-                <p>Email: <a href="mailto:octoreach2026@gmail.com" style="color: var(--primary);">octoreach2026@gmail.com</a></p>
+                    <h2>10. Changes to Terms</h2>
+                    <p>We reserve the right to modify these Terms at any time. We will notify users of any material changes by updating the "Last Updated" date. Continued use of the App after changes constitutes acceptance of the new Terms.</p>
+
+                    <h2>11. Contact Us</h2>
+                    <p>If you have any questions about these Terms, please contact us at:</p>
+                    <p>Email: <a href="mailto:octoreach2026@gmail.com" style="color: var(--primary);">octoreach2026@gmail.com</a></p>
+                </div>
+
+                <!-- Simplified Chinese Content -->
+                <div id="content-zh" class="content-block" style="display: none;">
+                    <h1>使用条款</h1>
+                    <p class="update-date">最后更新：2026年1月31日</p>
+
+                    <h2>1. 条款接受</h2>
+                    <p>通过下载、安装或使用壹习惯（"本应用"），您同意受这些使用条款的约束。如果您不同意这些条款，请不要使用本应用。</p>
+
+                    <h2>2. 应用使用</h2>
+                    <p>壹习惯是一款旨在帮助您养成更好习惯的习惯追踪应用。您同意仅将本应用用于合法目的，并遵守这些条款。您不得：</p>
+                    <ul>
+                        <li>以任何违反适用法律法规的方式使用本应用</li>
+                        <li>尝试反向工程或反编译本应用</li>
+                        <li>使用本应用传输有害或恶意内容</li>
+                    </ul>
+
+                    <h2>3. 订阅和付款</h2>
+                    <p>壹习惯提供可选的高级订阅：</p>
+                    <ul>
+                        <li><strong>月度订阅：</strong>按月计费，自动续订直到取消</li>
+                        <li><strong>年度订阅：</strong>按年计费，自动续订直到取消</li>
+                        <li><strong>终身访问：</strong>一次性付款获得永久访问权</li>
+                    </ul>
+                    <p>付款将在确认购买时从您的 Apple ID 账户扣除。订阅会自动续订，除非在当前期间结束前至少24小时取消。</p>
+
+                    <h2>4. 免费试用</h2>
+                    <p>我们可能会为高级功能提供免费试用期。如果您在试用结束前未取消，将自动收取订阅费用。</p>
+
+                    <h2>5. 取消订阅</h2>
+                    <p>您可以随时通过 Apple ID 账户设置取消订阅。取消将在当前计费期结束时生效。</p>
+
+                    <h2>6. 用户数据</h2>
+                    <p>您的习惯数据存储在您的设备本地。我们重视您的隐私，不会出售您的个人数据。请参阅我们的隐私政策了解更多详情。</p>
+
+                    <h2>7. 知识产权</h2>
+                    <p>本应用及其原创内容、功能和功能归壹习惯所有，受国际版权、商标和其他知识产权法律保护。</p>
+
+                    <h2>8. 免责声明</h2>
+                    <p>本应用按"现状"提供，不提供任何明示或暗示的保证。我们不保证本应用无错误或不间断运行。我们对您使用本应用产生的任何损害不承担责任。</p>
+
+                    <h2>9. 责任限制</h2>
+                    <p>在任何情况下，壹习惯均不对因您使用或无法使用本应用而导致的任何间接、附带、特殊、后果性或惩罚性损害承担责任。</p>
+
+                    <h2>10. 条款变更</h2>
+                    <p>我们保留随时修改这些条款的权利。我们将通过更新"最后更新"日期来通知用户任何重大变更。在变更后继续使用本应用即表示接受新条款。</p>
+
+                    <h2>11. 联系我们</h2>
+                    <p>如果您对这些条款有任何疑问，请通过以下方式联系我们：</p>
+                    <p>邮箱：<a href="mailto:octoreach2026@gmail.com" style="color: var(--primary);">octoreach2026@gmail.com</a></p>
+                </div>
+
+                <!-- Traditional Chinese Content -->
+                <div id="content-zh-TW" class="content-block" style="display: none;">
+                    <h1>使用條款</h1>
+                    <p class="update-date">最後更新：2026年1月31日</p>
+
+                    <h2>1. 條款接受</h2>
+                    <p>透過下載、安裝或使用壹習慣（「本應用程式」），您同意受這些使用條款的約束。如果您不同意這些條款，請不要使用本應用程式。</p>
+
+                    <h2>2. 應用程式使用</h2>
+                    <p>壹習慣是一款旨在幫助您養成更好習慣的習慣追蹤應用程式。您同意僅將本應用程式用於合法目的，並遵守這些條款。您不得：</p>
+                    <ul>
+                        <li>以任何違反適用法律法規的方式使用本應用程式</li>
+                        <li>嘗試反向工程或反編譯本應用程式</li>
+                        <li>使用本應用程式傳輸有害或惡意內容</li>
+                    </ul>
+
+                    <h2>3. 訂閱和付款</h2>
+                    <p>壹習慣提供可選的進階訂閱：</p>
+                    <ul>
+                        <li><strong>月度訂閱：</strong>按月計費，自動續訂直到取消</li>
+                        <li><strong>年度訂閱：</strong>按年計費，自動續訂直到取消</li>
+                        <li><strong>終身存取：</strong>一次性付款獲得永久存取權</li>
+                    </ul>
+                    <p>付款將在確認購買時從您的 Apple ID 帳戶扣除。訂閱會自動續訂，除非在當前期間結束前至少24小時取消。</p>
+
+                    <h2>4. 免費試用</h2>
+                    <p>我們可能會為進階功能提供免費試用期。如果您在試用結束前未取消，將自動收取訂閱費用。</p>
+
+                    <h2>5. 取消訂閱</h2>
+                    <p>您可以隨時透過 Apple ID 帳戶設定取消訂閱。取消將在當前計費期結束時生效。</p>
+
+                    <h2>6. 使用者資料</h2>
+                    <p>您的習慣資料儲存在您的裝置本地。我們重視您的隱私，不會出售您的個人資料。請參閱我們的隱私政策了解更多詳情。</p>
+
+                    <h2>7. 智慧財產權</h2>
+                    <p>本應用程式及其原創內容、功能歸壹習慣所有，受國際著作權、商標和其他智慧財產權法律保護。</p>
+
+                    <h2>8. 免責聲明</h2>
+                    <p>本應用程式按「現狀」提供，不提供任何明示或暗示的保證。我們不保證本應用程式無錯誤或不間斷運行。我們對您使用本應用程式產生的任何損害不承擔責任。</p>
+
+                    <h2>9. 責任限制</h2>
+                    <p>在任何情況下，壹習慣均不對因您使用或無法使用本應用程式而導致的任何間接、附帶、特殊、後果性或懲罰性損害承擔責任。</p>
+
+                    <h2>10. 條款變更</h2>
+                    <p>我們保留隨時修改這些條款的權利。我們將透過更新「最後更新」日期來通知使用者任何重大變更。在變更後繼續使用本應用程式即表示接受新條款。</p>
+
+                    <h2>11. 聯繫我們</h2>
+                    <p>如果您對這些條款有任何疑問，請透過以下方式聯繫我們：</p>
+                    <p>電子郵件：<a href="mailto:octoreach2026@gmail.com" style="color: var(--primary);">octoreach2026@gmail.com</a></p>
+                </div>
             </div>
         </div>
     </section>
@@ -90,5 +204,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Get language from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang') || 'en';
+        
+        // Hide all content blocks
+        document.querySelectorAll('.content-block').forEach(block => {
+            block.style.display = 'none';
+        });
+        
+        // Show selected language content
+        const contentBlock = document.getElementById('content-' + lang);
+        if (contentBlock) {
+            contentBlock.style.display = 'block';
+        } else {
+            document.getElementById('content-en').style.display = 'block';
+        }
+        
+        // Highlight active language button
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            if (btn.dataset.lang === lang) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Update page title based on language
+        const titles = {
+            'en': 'Terms of Use - One Ritual',
+            'zh': '使用条款 - 壹习惯',
+            'zh-TW': '使用條款 - 壹習慣'
+        };
+        document.title = titles[lang] || titles['en'];
+    </script>
 </body>
 </html>
